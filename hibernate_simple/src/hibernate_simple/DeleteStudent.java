@@ -16,13 +16,17 @@ public class DeleteStudent {
 		
 		try
 		{	
-			//--------------------------Updating student in DB------------------------------
+			//--------------------------Deleting student from DB------------------------------
 			
 			session.beginTransaction();
 			
-			Student deleteStudent=session.get(Student.class,2);
+			//Student deleteStudent=session.get(Student.class,2);
 			
-			session.delete(deleteStudent);
+			//session.delete(deleteStudent);
+			
+			//Deleting student with id=3
+			
+			session.createQuery("delete from Student where id=3").executeUpdate();
 			
 			session.getTransaction().commit();
 			
